@@ -1,0 +1,22 @@
+name: Recipe App API
+on: [push]
+
+jobs:
+  Check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Refactor code
+        run: |
+          black .
+      - name: Run tests
+        run: |
+          python manage.py test
