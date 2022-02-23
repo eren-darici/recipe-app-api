@@ -2,7 +2,7 @@ name: Recipe App API
 on: [push]
 
 jobs:
-  Run Tests:
+  Tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
